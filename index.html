@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>A&D Interior Design — Ambient Therapy</title>
+<meta name="description" content="Trasforma la confusione in armonia. A&D Interior Design: un approccio di Ambient Therapy per creare case che somiglino davvero a chi le abita.">
+<meta name="theme-color" content="#6B7561">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPCEtLSBzZm9uZG8gLS0+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0iI0Y0RjBFNiIvPgogIDwhLS0gQSAtLT4KICA8dGV4dCB4PSIyIiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjNEQ1NjQ1Ij5BPC90ZXh0PgogIDwhLS0gJiAtLT4KICA8dGV4dCB4PSIxMiIgeT0iMjMiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0MwMzkyQiI+JmFtcDs8L3RleHQ+CiAgPCEtLSBEIC0tPgogIDx0ZXh0IHg9IjIwIiB5PSIyMyIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjNEQ1NjQ1Ij5EPC90ZXh0PgogIDwhLS0gc290dGlsZSBsaW5lYSBkZWNvcmF0aXZhIC0tPgogIDxsaW5lIHgxPSIzIiB5MT0iMjYiIHgyPSIyOSIgeTI9IjI2IiBzdHJva2U9IiNDMDM5MkIiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPgo=">
+<style>
+  :root{
+    --sand:#F4F0E6;
+    --paper:#FBF9F4;
+    --ink:#332F26;
+    --sage:#6B7561;
+    --sage-deep:#4D5645;
+    --clay:#9B8A6E;
+    --rust:#B24A5D; 
+    --rust-deep:#8e3a4b;
+    --line: rgba(51,47,38,0.14);
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", "URW Palladio L", Palatino, serif;
+    --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--sand);
+    color:var(--ink);
+    font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  ::selection{background:var(--sage); color:var(--paper);}
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  .eyebrow{
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--sage-deep);
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:18px;
+    height:1px;
+    background:var(--sage-deep);
+    display:inline-block;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0;
+    z-index:100;
+    padding:22px 0;
+    transition: all .4s ease;
+  }
+  header.scrolled{
+    background:rgba(244,240,230,0.88);
+    backdrop-filter:blur(10px);
+    padding:14px 0;
+    box-shadow:0 1px 0 var(--line);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    font-family:var(--serif);
+    font-size:21px;
+    font-weight:700;
+    letter-spacing:0.01em;
+    color:var(--sage-deep);
+  }
+  .logo span{ color:var(--rust); font-style:italic; font-weight:700; }
+
+  .nav-links{
+    display:flex;
+    gap:36px;
+    list-style:none;
+  }
+  .nav-links a{
+    font-size:13px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    font-weight:500;
+    position:relative;
+    padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute; left:0; bottom:0;
+    width:0; height:1px;
+    background:var(--ink);
+    transition:width .3s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+
+  .nav-cta{
+    font-size:13px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    font-weight:600;
+    border:1px solid var(--rust);
+    color:var(--rust);
+    padding:9px 20px;
+    border-radius:999px;
+    transition: all .3s ease;
+  }
+  .nav-cta:hover{ background:var(--rust); color:var(--paper); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding-top:120px;
+    padding-bottom:60px;
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+  }
+
+  .hero h1{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(40px, 6vw, 76px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--rust);
+  }
+
+  .hero-sub{
+    margin-top:26px;
+    font-size:17px;
+    line-height:1.65;
+    color:rgba(51,47,38,0.78);
+    max-width:440px;
+  }
+
+  .hero-actions{
+    margin-top:38px;
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+
+  .btn-primary{
+    background:var(--rust);
+    color:var(--paper);
+    font-size:13px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    font-weight:600;
+    padding:16px 30px;
+    border-radius:999px;
+    transition:all .3s ease;
+    display:inline-block;
+  }
+  .btn-primary:hover{ background:var(--rust-deep); transform:translateY(-2px); }
+
+  .visual-wrap{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .visual-wrap svg{ width:100%; height:auto; max-width:460px; }
+  .mood-line{
+    fill:none;
+    stroke:var(--ink);
+    stroke-width:1.2;
+    stroke-dasharray:1000;
+    stroke-dashoffset:1000;
+    animation: drawLine 3s ease forwards .3s;
+  }
+  @keyframes drawLine{ to{ stroke-dashoffset:0; } }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee-band{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:18px 0;
+    overflow:hidden;
+    background:var(--paper);
+  }
+  .marquee-track{
+    display:flex;
+    width:max-content;
+    animation: scrollLeft 30s linear infinite;
+  }
+  .marquee-track span{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:18px;
+    color: rgba(51,47,38,0.55);
+    padding:0 28px;
+    white-space:nowrap;
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+  .marquee-track span::after{ content:"◆"; font-style:normal; font-size:8px; color:var(--rust); }
+  @keyframes scrollLeft{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{ padding:80px 0; }
+  .section-head{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px;
+    align-items:end;
+    margin-bottom:60px;
+  }
+  .section-head h2{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(30px, 4vw, 48px);
+    line-height:1.08;
+    margin-top:18px;
+  }
+  .section-head h2 em{ font-style:italic; color:var(--rust); }
+  .section-head .lead{
+    font-size:16px;
+    line-height:1.7;
+    color: rgba(51,47,38,0.72);
+    align-self:end;
+  }
+
+  /* ---------- ABOUT (Ambient Therapy) ---------- */
+  .about{ background:var(--paper); }
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap:70px;
+    align-items:center;
+  }
+  .about-figure{
+    position:relative;
+    aspect-ratio: 4/5;
+    border-radius:6px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    /* Sfondo rimosso (p1) */
+  }
+  
+  /* Animazione SVG Terapia Colori */
+  .color-blob {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation: floatBlob 8s ease-in-out infinite;
+  }
+  .blob-1 { animation-delay: 0s; }
+  .blob-2 { animation-delay: -2s; }
+  .blob-3 { animation-delay: -4s; }
+  .blob-4 { animation-delay: -6s; }
+
+  @keyframes floatBlob {
+    0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+    33% { transform: translate(15px, -20px) scale(1.1); opacity: 0.7; }
+    66% { transform: translate(-15px, 15px) scale(0.9); opacity: 0.5; }
+  }
+
+  .about-figure .tag{
+    position:absolute;
+    bottom:28px;
+    left:28px;
+    color:var(--ink);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:18px;
+    line-height:1.5;
+  }
+  .about-figure .tag small{
+    display:block;
+    font-family:var(--sans);
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    opacity:0.6;
+    margin-top:8px;
+  }
+
+  .about-text p{
+    font-size:17px;
+    line-height:1.75;
+    color: rgba(51,47,38,0.82);
+    margin-bottom:22px;
+  }
+  .about-text p:first-child{
+    font-family:var(--serif);
+    font-size:23px;
+    line-height:1.5;
+    color:var(--ink);
+  }
+
+  .quote{
+    margin-top:36px;
+    padding-left:24px;
+    border-left:2px solid var(--rust);
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:20px;
+    line-height:1.6;
+    color:var(--rust);
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service-card{
+    background:var(--sand);
+    padding:30px 24px;
+    transition: background .35s ease;
+  }
+  .service-card:hover{ background:var(--paper); }
+  .service-num{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:14px;
+    color:var(--clay);
+  }
+  .service-card h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:21px;
+    margin:15px 0 10px;
+  }
+  .service-card p{
+    font-size:14.5px;
+    line-height:1.65;
+    color: rgba(51,47,38,0.7);
+    margin-bottom:15px;
+  }
+  .service-tags span{
+    font-size:11px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--sage-deep);
+    border:1px solid rgba(107,117,97,0.35);
+    padding:5px 11px;
+    border-radius:999px;
+  }
+
+  /* ---------- PROCESS ---------- */
+  .process{ background:var(--paper); }
+  .process-list{ border-top:1px solid var(--line); }
+  .process-row{
+    display:grid;
+    grid-template-columns: 90px 1fr 1.3fr 50px;
+    gap:30px;
+    align-items:center;
+    padding:20px 0;
+    border-bottom:1px solid var(--line);
+    transition: padding-left .35s ease;
+  }
+  .process-row:hover{ padding-left:14px; }
+  .process-num{ font-family:var(--serif); font-style:italic; font-size:30px; color:var(--clay); }
+  .process-row h3{ font-family:var(--serif); font-weight:500; font-size:23px; }
+  .process-row p{ font-size:15px; line-height:1.65; color: rgba(51,47,38,0.7); }
+  .process-arrow{ font-size:20px; color:var(--rust); text-align:right; transition: transform .35s ease; }
+  .process-row:hover .process-arrow{ transform:translateX(6px); }
+
+  /* ---------- CTA / CONTACT ---------- */
+  .cta{
+    position:relative;
+    background:var(--rust);
+    color:var(--paper);
+    overflow:hidden;
+  }
+  .cta-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap:60px;
+  }
+  .cta h2{
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(32px, 5vw, 56px);
+    line-height:1.5;
+  }
+  .cta h2 em{ font-style:italic; color:#F4DCC8; }
+
+  .cta-eyebrow{ color:#F8E5D5; }
+  .cta-eyebrow::before{ background:#F8E5D5; }
+
+  .cta-meta{
+    margin-top:30px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    font-size:15px;
+    color: rgba(251,249,244,0.88);
+  }
+  .meta-item{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+  }
+  .meta-item strong{ 
+    color:var(--paper); 
+    font-weight:600; 
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+  }
+  .meta-item a{ 
+    color:var(--paper); 
+    border-bottom:1px solid rgba(251,249,244,0.5); 
+    display:inline-flex; 
+    align-items:center; 
+    gap:10px; 
+    font-size: 17px;
+    font-family: var(--serif);
+  }
+
+  .showroom-box{
+    margin-top: 10px;
+    padding-left: 15px;
+    border-left: 1px solid rgba(251,249,244,0.3);
+  }
+  .showroom-address{
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .showroom-note{
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .form-card{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:10px;
+    padding:38px;
+  }
+  .form-card h3{
+    font-family:var(--serif);
+    font-size:20px;
+    font-weight:500;
+    margin-bottom:22px;
+  }
+  .field{ margin-bottom:18px; }
+  .field label{
+    display:block;
+    font-size:11px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color: rgba(51,47,38,0.6);
+    margin-bottom:7px;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;
+    border:none;
+    border-bottom:1px solid rgba(51,47,38,0.25);
+    background:transparent;
+    font-family:var(--sans);
+    font-size:15px;
+    padding:9px 2px;
+    color:var(--ink);
+    resize:none;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{ outline:none; border-bottom-color:var(--rust); }
+  .field textarea{ min-height:70px; }
+
+  .form-submit{
+    width:100%;
+    margin-top:10px;
+    background:var(--rust);
+    color:var(--paper);
+    border:none;
+    border-radius:999px;
+    padding:15px 0;
+    font-family:var(--sans);
+    font-size:13px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    font-weight:600;
+    cursor:pointer;
+    transition: background .3s ease;
+  }
+  .form-submit:hover{ background:var(--rust-deep); }
+
+  footer{
+    padding:36px 0;
+    background:white;
+    color: var(--rust);
+    border-top: 1px solid var(--line);
+  }
+  .footer-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+    font-size:13px;
+  }
+  .footer-row .fl{ display:flex; gap:24px; }
+  .footer-row a{ color: var(--rust); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px){
+    .nav-links, .nav-cta{ display:none; }
+    .hero-grid, .about-grid, .section-head, .cta-grid{ grid-template-columns:1fr; }
+    .visual-wrap{ order:-1; margin-bottom:40px; }
+    .services-grid{ grid-template-columns:1fr; }
+    .process-row{ grid-template-columns: 50px 1fr; }
+    .process-row p{ grid-column:2/3; }
+    .process-arrow{ display:none; }
+    section{ padding:60px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <nav>
+      <a href="#" class="logo">A&amp;D <span>Interior Design</span></a>
+      <ul class="nav-links">
+        <li><a href="#metodo">Ambient Therapy</a></li>
+        <li><a href="#dubbi">I tuoi dubbi</a></li>
+        <li><a href="#processo">Il percorso</a></li>
+        <li><a href="#contact">Contatti</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Iniziamo da te</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Interior Design &bull; Ambient Therapy</div>
+        <h1>La tua casa.<br><em>Troppe scelte?</em></h1>
+        <p class="hero-sub">Colori, materiali, arredi: da dove si comincia? Trasformiamo l'incertezza in una direzione coerente e personale.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Scopri da dove partire &rarr;</a>
+        </div>
+      </div>
+
+      <div class="visual-wrap">
+        <svg viewBox="0 0 400 400" aria-hidden="true">
+          <rect class="mood-line" x="50" y="50" width="150" height="150" rx="4" />
+          <rect class="mood-line" x="210" y="50" width="140" height="250" rx="4" />
+          <rect class="mood-line" x="50" y="210" width="150" height="140" rx="4" />
+          <circle class="mood-line" cx="280" cy="200" r="50" />
+          <line class="mood-line" x1="100" y1="100" x2="300" y2="300" stroke-dasharray="5 5" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-band">
+    <div class="marquee-track" aria-hidden="true">
+      <span>Ambient Therapy</span><span>Colori Coerenti</span><span>Materiali Autentici</span><span>Arredi su Misura</span><span>Senti la tua casa</span><span>Ambient Therapy</span><span>Colori Coerenti</span><span>Materiali Autentici</span><span>Arredi su Misura</span><span>Senti la tua casa</span>
+    </div>
+  </div>
+
+  <!-- ABOUT: Ambient Therapy -->
+  <section class="about" id="metodo">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-figure reveal">
+          <!-- SVG animato terapia dei colori aggiornato (p1, p2) -->
+          <svg viewBox="0 0 200 200" width="300" height="300">
+            <circle class="color-blob blob-1" cx="80" cy="80" r="120" fill="var(--rust)" opacity="0.6" />
+            <circle class="color-blob blob-2" cx="140" cy="70" r="120" fill="var(--sage)" opacity="0.6" />
+            <circle class="color-blob blob-3" cx="60" cy="140" r="120" fill="var(--clay)" opacity="0.6" />
+            <circle class="color-blob blob-4" cx="110" cy="120" r="80" fill="var(--sand)" opacity="0.8" />
+            <circle cx="100" cy="100" r="20" fill="var(--ink)" opacity="0.3" />
+          </svg>
+          <div class="tag">"Gli spazi prendono forma intorno a chi li vive."
+            <small>— Metodo A&D</small>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <div class="eyebrow">Il nostro approccio</div>
+          <p style="margin-top:18px;">Partiamo da te. Non da un catalogo, non da una tendenza del momento, ma dalle tue abitudini.</p>
+          <p>Analizziamo i tuoi bisogni profondi e, soprattutto, come vuoi <em>sentirti</em> quando varchi la soglia di casa.</p>
+          <p>L'Ambient Therapy è l'arte di allineare l'estetica dello spazio allo stato emotivo di chi lo abita, eliminando il rumore delle "troppe scelte".</p>
+          <div class="quote">"Prima delle scelte, serve una direzione."</div>
+          <a href="#contact" class="btn-primary" style="margin-top:34px;">Raccontami i tuoi bisogni</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES: I tuoi dubbi -->
+  <section id="dubbi">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">I tuoi dubbi</div>
+          <h2>Hai tante idee,<br>ma pochi <em>punti fermi</em></h2>
+        </div>
+        <p class="lead">La confusione nasce dalla mancanza di un filo conduttore. Risolviamo i tre dubbi principali che bloccano ogni progetto.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card reveal">
+          <div class="service-num">01</div>
+          <h3>L'estetica del tempo</h3>
+          <p>"Questo colore mi piacerà ancora?"</p>
+          <p>Scegliamo palette che non stancano, basate sulla psicologia del colore e sulla luce naturale del tuo spazio.</p>
+          <div class="service-tags"><span>Cromia</span><span>Luce</span><span>Durabilità</span></div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">02</div>
+          <h3>L'equilibrio economico</h3>
+          <p>"Come tengo sotto controllo il budget?"</p>
+          <p>Diamo un valore reale a ogni scelta, ottimizzando gli investimenti dove l'impatto visivo e funzionale è maggiore.</p>
+          <div class="service-tags"><span>Budget</span><span>Valore</span><span>Ottimizzazione</span></div>
+        </div>
+
+        <div class="service-card reveal">
+          <div class="service-num">03</div>
+          <h3>L'identità dello spazio</h3>
+          <p>"Questa casa mi somiglierà davvero?"</p>
+          <p>Il design non è decorazione, ma specchio. Creiamo un insieme coerente che parli di te senza bisogno di parole.</p>
+          <div class="service-tags"><span>Identità</span><span>Emozioni</span><span>Coerenza</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS: Il percorso -->
+  <section class="process" id="processo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="eyebrow">Il percorso</div>
+          <h2>Diamo un <em>filo</em><br>alle tue scelte</h2>
+        </div>
+        <p class="lead">Colori, materiali e arredi diventano un insieme coerente, in dialogo costante con le tue esigenze e il tuo budget.</p>
+      </div>
+
+      <div class="process-list">
+        <div class="process-row reveal">
+          <div class="process-num">01</div>
+          <h3>Ascolto Empatico</h3>
+          <p>Analizziamo le tue abitudini e i tuoi desideri per definire il "sentimento" della casa.</p>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+        <div class="process-row reveal">
+          <div class="process-num">02</div>
+          <h3>Definizione Direzione</h3>
+          <p>Creiamo il filo conduttore: una moodboard di valori, colori e materiali che guidano ogni scelta.</p>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+        <div class="process-row reveal">
+          <div class="process-num">03</div>
+          <h3>Sintesi Progettuale</h3>
+          <p>Traduciamo la direzione in piante, render e capitolati, eliminando ogni dubbio residuo.</p>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+        <div class="process-row reveal">
+          <div class="process-num">04</div>
+          <h3>Realizzazione Armonica</h3>
+          <p>Accompagniamo la posa in opera affinché l'idea originale diventi realtà tangibile.</p>
+          <div class="process-arrow">&rarr;</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA: Contatti -->
+  <section class="cta" id="contact">
+    <div class="wrap cta-grid">
+      <div class="reveal">
+        <div class="eyebrow cta-eyebrow">Iniziamo</div>
+        <h2 style="margin-top:18px;">Una casa bella, <br>e Tua. Davvero.</h2>
+        
+        <div class="cta-meta">
+          <div class="meta-item">
+            <strong style="color:white">Posta</strong>
+            <a href="mailto:aedinteriordesign@proton.me">aedinteriordesign@proton.me</a>
+          </div>
+          
+          <div class="meta-item">
+            <strong style="color:white">Cellulare</strong>
+            <a href="tel:+393487614687">+39 348 761 4687</a>
+          </div>
+
+          <div class="meta-item">
+            <strong style="color:white">Show Room</strong>
+            <div class="showroom-box">
+              <span class="showroom-address">Via Ammiraglio Gregorio Ronca, 27<br>83100 Avellino AV</span>
+              <span class="showroom-note">Visite su appuntamento</span>
+            </div>
+          </div>
+          <!-- Instagram rimosso (p3) -->
+        </div>
+      </div>
+
+      <form class="form-card reveal" id="contactForm">
+        <h3>Raccontami da dove vuoi partire</h3>
+        <div class="field">
+          <label for="f-name">Nome e cognome *</label>
+          <input id="f-name" type="text" required>
+        </div>
+        <div class="field">
+          <label for="f-email">Email *</label>
+          <input id="f-email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="f-type">Cosa ti preoccupa di più?</label>
+          <select id="f-type">
+            <option>La scelta dei colori</option>
+            <option>La gestione del budget</option>
+            <option>L'identità della casa</option>
+            <option>Non so da dove iniziare</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg">Descrivi il tuo spazio o il tuo dubbio *</label>
+          <textarea id="f-msg" required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Invia richiesta</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer id="siteFooter">
+  <div class="wrap footer-row">
+    <span>A&amp;D Interior Design - © 2026 ideazione Nycheia - Tutti i diritti riservati.</span>
+    <div class="fl">
+      <a href="#metodo">Metodo</a>
+      <a href="#dubbi">Dubbi</a>
+      <a href="#contact">Contatti</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => io.observe(el));
+
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const nome    = document.getElementById('f-name').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const tipo    = document.getElementById('f-type').value;
+    const msg     = document.getElementById('f-msg').value.trim();
+
+    const oggetto = encodeURIComponent('Nuova richiesta Ambient Therapy da ' + nome);
+    const corpo   = encodeURIComponent(
+      'SITO A&D - RICHIESTA CONSULENZA\n' +
+      '─────────────────────────────────\n' +
+      'Nome: ' + nome  + '\n' +
+      'Email: ' + email + '\n' +
+      'Dubbio principale: ' + tipo + '\n' +
+      '─────────────────────────────────\n' +
+      'Messaggio:\n' + msg + '\n'
+    );
+
+    window.location.href = 'mailto:aedinteriordesign@proton.me?subject=' + oggetto + '&body=' + corpo;
+  });
+</script>
+
+</body>
+</html>
